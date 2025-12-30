@@ -41,7 +41,7 @@ export default function Signup() {
 
     try {
       await axios.post(
-        "http://localhost:5001/api/auth/signup",
+        "https://api-vishal-backend.onrender.com/api/auth/signup",
         {
           name: form.name,
           email: form.email,
