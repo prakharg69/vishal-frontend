@@ -39,7 +39,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
   const getUser = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5001/api/auth/me",
+        "https://api-vishal-backend.onrender.com/api/auth/me",
         { withCredentials: true }
       );
 
@@ -56,7 +56,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
   try {
     setMyRequestsLoading(true);
     const res = await axios.get(
-      "http://localhost:5001/api/request/my",
+      "https://api-vishal-backend.onrender.com/api/request/my",
       { withCredentials: true }
     );
     setMyRequests(res.data.requests);
@@ -143,7 +143,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
   const logout = async () => {
     try {
       await axios.post(
-        "http://localhost:5001/api/auth/logout",
+        "https://api-vishal-backend.onrender.com/api/auth/logout",
         {},
         { withCredentials: true }
       );
@@ -166,7 +166,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
       setServiceLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5001/api/service/my",
+        "https://api-vishal-backend.onrender.com/api/service/my",
         { withCredentials: true }
       );
 
@@ -183,7 +183,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
       setServiceLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5001/api/service/create",
+        "https://api-vishal-backend.onrender.com/api/service/create",
         serviceData,
         { withCredentials: true }
       );
@@ -203,7 +203,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
   const setLocation = async ({ latitude, longitude, address }) => {
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/responder/set-location",
+        "https://api-vishal-backend.onrender.com/api/responder/set-location",
         { latitude, longitude, address },
         { withCredentials: true }
       );
@@ -223,7 +223,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
       setIncomingLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5001/api/request/responder",
+        "https://api-vishal-backend.onrender.com/api/request/responder",
         { withCredentials: true }
       );
 
@@ -242,7 +242,7 @@ const [myRequestsLoading, setMyRequestsLoading] = useState(false);
   }) => {
     try {
       await axios.post(
-        "http://localhost:5001/api/request/respond",
+        "https://api-vishal-backend.onrender.com/api/request/respond",
         {
           requestId,
           response,
